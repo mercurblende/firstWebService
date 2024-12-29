@@ -66,7 +66,7 @@ app.post('/api/persons', (request, response) => {
 
 
   const note = request.body
-  note.id = Math.random()*10**16
+  note.id = String(Math.random()*10**17)
   
   persons = persons.concat(note)
 
