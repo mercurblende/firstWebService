@@ -12,7 +12,7 @@ app.use(cors());
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: ["'none'"], // Blocks everything by default
+      defaultSrc: ["'self'"], // Blocks everything by default
       scriptSrc: ["'self'"], // Allow scripts from the same origin
       styleSrc: ["'self'"], // Allow styles from the same origin
       imgSrc: ["'self'", "https://first-web-service-nwe2re9o7.vercel.app"], // Allow images from your domain (and any other trusted domains)
