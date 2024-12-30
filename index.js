@@ -10,12 +10,15 @@ morgan.token("body", function (req, res) {
 
 app.use(cors());
 app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        defaultSrc: ["'self'"],
-        connectSrc: ["'self'"],
-      },
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'none'"], // Blocks everything by default
+      scriptSrc: ["'self'"], // Allow scripts from the same origin
+      styleSrc: ["'self'"], // Allow styles from the same origin
+      imgSrc: ["'self'", "https://first-web-service-nwe2re9o7.vercel.app"], // Allow images from your domain (and any other trusted domains)
+      fontSrc: ["'self'"], // Allow fonts from the same origin
+      connectSrc: ["'self'"], // Allow connections (AJAX/fetch) to the same origin
+      // Add other directives as needed (e.g., for handling fonts, videos, etc.)
     },
   }),
 );
