@@ -7,6 +7,7 @@ morgan.token('body', function (req, res) {if (req.method==='POST') return JSON.s
 
 app.use(cors())
 app.use(express.json())
+app.use(express.static('dist'))
 app.use(morgan(' :method :url :status :res[content-length] - :response-time ms :body'))
 
 let persons = [
@@ -32,9 +33,9 @@ let persons = [
     }
 ]
 
-app.get('/', (req, res) => {
-  res.redirect("/api/persons")
-})
+// app.get('/', (req, res) => {
+//   res.redirect("/api/persons")
+// })
 
 app.get('/api/persons', (request, response) => {
   response.json(persons)
