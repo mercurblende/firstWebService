@@ -33,6 +33,7 @@ let persons = [
     }
 ]
 
+// This is a meaningless comment for testing purposes 
 // app.get('/', (req, res) => {
 //   res.redirect("/api/persons")
 // })
