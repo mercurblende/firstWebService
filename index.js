@@ -2,6 +2,14 @@ const express = require('express')
 const app = express()
 let morgan = require('morgan')
 const cors = require('cors')
+const { expressCspHeader, INLINE, NONE, SELF } = require('express-csp-header');
+
+app.use(expressCspHeader({ 
+    policies: { 
+        'default-src': [expressCspHeader.NONE], 
+        'img-src': [expressCspHeader.SELF], 
+    } 
+}));  
 
 morgan.token('body', function (req, res) {if (req.method==='POST') return JSON.stringify(req.body)})
 
