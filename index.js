@@ -33,9 +33,6 @@ let persons = [
     }
 ]
 
-// app.get('/', (req, res) => {
-//   res.redirect("/api/persons")
-// })
 
 app.get('/api/persons', (request, response) => {
   response.json(persons)
