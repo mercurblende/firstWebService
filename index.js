@@ -41,7 +41,7 @@ let persons = [
     }
 ]
 
-// This is a meaningless comment for testing purposes 
+// Every night I wonder why fly io had to be like this.
 // app.get('/', (req, res) => {
 //   res.redirect("/api/persons")
 // })
